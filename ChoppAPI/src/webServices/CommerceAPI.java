@@ -11,23 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import database.CustomerDB;
-import model.Customer;
+import database.CommerceDB;
+import model.Commerce;
 
-@WebServlet("/customerAPI")
-public class CustomerAPI extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+
+@WebServlet("/commerceAPI")
+public class CommerceAPI extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     
-    public CustomerAPI() {
+    public CommerceAPI() {
         super();
-        
+       
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		CustomerDB customerDB = new CustomerDB();
-		ArrayList<Customer> arrayListCustomer = customerDB.selectAllCustomer();
-		String json = new Gson().toJson(arrayListCustomer);
+		CommerceDB commerceDB = new CommerceDB();
+		ArrayList<Commerce> arrayListCommerce = commerceDB.selectAllCommerce();
+		String json = new Gson().toJson(arrayListCommerce);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(json);

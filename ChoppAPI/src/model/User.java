@@ -1,12 +1,10 @@
 package model;
 
-import java.time.LocalDate;
-
 public class User {
 	
 	private Integer id;
 	private Integer idCustomers;
-	private LocalDate dtAccess;
+	private String dtAccess;
 	private Integer codeIMEI;
 	
 	
@@ -22,10 +20,10 @@ public class User {
 	public void setIdCustomers(Integer idCustomers) {
 		this.idCustomers = idCustomers;
 	}
-	public LocalDate getDtAccess() {
+	public String getDtAccess() {
 		return dtAccess;
 	}
-	public void setDtAccess(LocalDate dtAccess) {
+	public void setDtAccess(String dtAccess) {
 		this.dtAccess = dtAccess;
 	}
 	public Integer getCodeIMEI() {

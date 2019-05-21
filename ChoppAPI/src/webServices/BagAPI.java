@@ -11,30 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 
-import database.CustomerDB;
-import model.Customer;
+import database.BagDB;
+import model.Bag;
 
-@WebServlet("/customerAPI")
-public class CustomerAPI extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+@WebServlet("/bagAPI")
+public class BagAPI extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     
-    public CustomerAPI() {
+    public BagAPI() {
         super();
-        
+
     }
-	
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		CustomerDB customerDB = new CustomerDB();
-		ArrayList<Customer> arrayListCustomer = customerDB.selectAllCustomer();
-		String json = new Gson().toJson(arrayListCustomer);
+				
+		BagDB bagDB = new BagDB();
+		ArrayList<Bag> arrayListBag = bagDB.selectAllBag();
+		String json = new Gson().toJson(arrayListBag);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(json);
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		doGet(request, response);
 	}
 

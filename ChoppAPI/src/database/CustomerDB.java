@@ -11,7 +11,7 @@ import model.Customer;
 
 public class CustomerDB {
 
-	public static ArrayList<Customer> selectAllCustomer() {
+	public ArrayList<Customer> selectAllCustomer() {
 		
 		ArrayList<Customer> arrayListCustomer = new ArrayList<>();
 		

@@ -10,24 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import database.UserDB;
+import model.User;
 
-import database.CustomerDB;
-import model.Customer;
-
-@WebServlet("/customerAPI")
-public class CustomerAPI extends HttpServlet {
-	private static final long serialVersionUID = 1L;       
+@WebServlet("/userAPI")
+public class UserAPI extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
     
-    public CustomerAPI() {
+    public UserAPI() {
         super();
         
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		CustomerDB customerDB = new CustomerDB();
-		ArrayList<Customer> arrayListCustomer = customerDB.selectAllCustomer();
-		String json = new Gson().toJson(arrayListCustomer);
+		UserDB userDB = new UserDB();
+		ArrayList<User> arrayListUser = userDB.selectAllUser();
+		String json = new Gson().toJson(arrayListUser);
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().write(json);

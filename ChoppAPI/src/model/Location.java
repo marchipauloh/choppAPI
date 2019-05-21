@@ -4,7 +4,7 @@ public class Location {
 	
 	private Integer idLocation;
 	private Integer customerId;
-	private String	adress;	
+	private String	address;	
 	private Integer numberAdress;
 	private String complement;
 	private String	district;	
@@ -25,11 +25,11 @@ public class Location {
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public Integer getNumberAdress() {
 		return numberAdress;

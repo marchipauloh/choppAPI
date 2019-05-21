@@ -9,4 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>CustomerAPI</display-name>
+    <servlet-name>CustomerAPI</servlet-name>
+    <servlet-class>webServices.CustomerAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CustomerAPI</servlet-name>
+    <url-pattern>/CustomerAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BagAPI</display-name>
+    <servlet-name>BagAPI</servlet-name>
+    <servlet-class>webServices.BagAPI</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BagAPI</servlet-name>
+    <url-pattern>/BagAPI</url-pattern>
+  </servlet-mapping>
 </web-app>
